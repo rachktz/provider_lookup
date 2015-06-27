@@ -1,0 +1,22 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700);
+
+//Navbar
+$navbar-height:		70px;
+$navbar-default-bg:		#2E61AE;
+$navbar-default-border:		#2E61AE;		
+$navbar-default-link-color:		#ecf0f1;
+$navbar-default-link-hover-color:		white;
+$navbar-border-radius:		0px;
+
+//Body
+$brand-primary:		#11C9F1;
+$body-bg:		#ecf0f1;
+$jumbotron-bg:		white;
+$font-family-sans-serif: 'Source Sans Pro', "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+
+@import 'bootstrap';
+
+.center {
+     text-align: center;
+}
