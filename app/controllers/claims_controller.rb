@@ -4,7 +4,7 @@ require 'httparty'
 class ClaimsController < ApplicationController
 
 	def index
-		@npi = params[:npi] || '1386821247'
+		@npi = params[:npi]
 		@claims = Claim.find_by_npi @npi
 	end
 

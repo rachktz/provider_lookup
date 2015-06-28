@@ -13,4 +13,3 @@ class Claim
 end
 
 puts Claim.for 1104813138
-puts @claims[0]["nppes_provider_first_name"] @claims[0]["nppes_provider_last_name"]

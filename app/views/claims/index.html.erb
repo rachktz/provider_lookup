@@ -1,20 +1,30 @@
-<div class = "container">
-	<h1> DR. <%= @claims[0]["nppes_provider_first_name"]%> <%= @claims[0]["nppes_provider_last_org_name"] %></h1>
-	<h2><%= @npi %></h2>
-</div>
 
+<h1><b>DR. <%= @claims[0]["nppes_provider_first_name"]%> <%= @claims[0]["nppes_provider_last_org_name"] %>, <%= @claims[0]["nppes_credentials"] %></b></h1>
+<h4><%= @npi %></h4>
+<h4><%= @claims[0]["provider_type"]%></h4>
+<h4><%= @claims[0]["nppes_provider_city"]%>, <%= @claims[0]["nppes_provider_state"]%></h4>
+
+</br>
 <div class="row">
 	<div class = "panel panel-default">
-		<div class="col-md-6"><h3>Procedures, 2013</h3></div>
-		<div class="col-md-6"><h3>Total</h3></div>
+		<div class="col-md-3"><h4><b>Procedure (2013)</b></h4></div>
+		<div class="col-md-1"><h4><b>Count</b></h4></div>
+		<div class="col-md-2"><h4><b>Average charge you submitted</b></h4></div>
+		<div class="col-md-2"><h4><b>Average charge nationally</b></h4></div>
+		<div class="col-md-2"><h4><b>Average amount paid to you</b></h4></div>
+		<div class="col-md-2"><h4><b>Average amount paid nationally</b></h4></div>
 	</div>
 </div>
 
 	<% @claims.each do |claim| %>
 		<div class="row">
 			<div class = "panel panel-default">
-				<div class="col-md-6"><h5><%= claim["hcpcs_description"] %></h5></div>
-				<div class="col-md-6"><h5><%= claim["line_srvc_cnt"] %></body></div>
+				<div class="col-md-3"><h5><%= claim["hcpcs_description"] %></h5></div>
+				<div class="col-md-1"><h5><%= claim["line_srvc_cnt"] %></h5></div>
+				<div class="col-md-2"><h5><%= number_to_currency(claim["average_submitted_chrg_amt"]) %></h5></div>
+				<div class="col-md-2"><h5></h5></div>
+				<div class="col-md-2"><h5><%= number_to_currency(claim["average_medicare_payment_amt"]) %></h5></div>
+				<div class="col-md-2"><h5></h5></div>
 			</div>
 		</div>
 	<% end %>
