@@ -1,4 +1,12 @@
 <div class="jumbotron center">
-	<h1>Know what Medicare knows</h1>
-	<p>What's your NPI?</p>
+	<h1>Get your Medicare Claims Profile</h1>
+	
+		<%= form_tag(index_path, method: "get") do %>
+		  <%= label_tag :npi, "My NPI is:", class: "h3" %>
+		  <%= text_field_tag :npi %>
+		</br>
+		</br>
+		  <%= button_tag class: 'btn btn-primary btn-lg' %>
+		<% end %>
+
 </div>
