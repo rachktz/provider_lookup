@@ -56,7 +56,8 @@
 		
 </div>
 
-<%= HTTParty.get('https://data.cms.gov/resource/5fnr-qp4c.json?npi=1104813138') %>
+<%= response = HTTParty.get('https://data.cms.gov/resource/5fnr-qp4c.json?npi=1104813138')%>
+<%= response[0]["average_medicare_allowed_amt"]%>
 
 
 
