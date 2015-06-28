@@ -4,10 +4,8 @@ require 'httparty'
 class Claim
 	include HTTParty
 	base_uri 'https://data.cms.gov'
-	default_params :output => "json"
-	format :json
 
-	def self.for npi
-		get('/resource/5fnr-qp4c.json', :query => {:npi => npi})["results"]
+	def self.find_by_npi npi
+		get('/resource/5fnr-qp4c.json', :query => {:npi => npi})
 	end
 end

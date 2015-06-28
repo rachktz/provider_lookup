@@ -1,3 +1,23 @@
 <div class = "container">
-	<h2> NPI - <%= @npi %></h2>
+	<h1> DR. <%= @claims[0]["nppes_provider_first_name"]%> <%= @claims[0]["nppes_provider_last_org_name"] %></h1>
+	<h2><%= @npi %></h2>
 </div>
+
+<div class="row">
+	<div class = "panel panel-default">
+		<div class="col-md-6"><h3>Procedures, 2013</h3></div>
+		<div class="col-md-6"><h3>Total</h3></div>
+	</div>
+</div>
+
+	<% @claims.each do |claim| %>
+		<div class="row">
+			<div class = "panel panel-default">
+				<div class="col-md-6"><h5><%= claim["hcpcs_description"] %></h5></div>
+				<div class="col-md-6"><h5><%= claim["line_srvc_cnt"] %></body></div>
+			</div>
+		</div>
+	<% end %>
+
+</div>
+
