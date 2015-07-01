@@ -22,9 +22,9 @@
 				<div class="col-md-3"><h5><%= claim["hcpcs_description"] %></h5></div>
 				<div class="col-md-1"><h5><%= claim["line_srvc_cnt"] %></h5></div>
 				<div class="col-md-2"><h5><%= number_to_currency(claim["average_submitted_chrg_amt"]) %></h5></div>
-				<div class="col-md-2"><h5></h5></div>
+				<div class="col-md-2"><h5> <%= number_to_currency(@average_charges["#{claim["hcpcs_code"]}_charge_#{claim["place_of_service"]}"]) %> </h5></div>
 				<div class="col-md-2"><h5><%= number_to_currency(claim["average_medicare_payment_amt"]) %></h5></div>
-				<div class="col-md-2"><h5></h5></div>
+				<div class="col-md-2"><h5> <%= number_to_currency(@average_payments["#{claim["hcpcs_code"]}_payment_#{claim["place_of_service"]}"]) %> </h5></div>
 			</div>
 		</div>
 	<% end %>
